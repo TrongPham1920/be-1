@@ -1,5 +1,6 @@
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const Post = require("./src/routers/post");
 
 // Swagger definition
 const swaggerDefinition = {
@@ -7,7 +8,7 @@ const swaggerDefinition = {
   info: {
     title: "Express API with Swagger",
     version: "1.0.0",
-    description: "Api lỏ",
+    description: "API documentation",
   },
   servers: [
     {
@@ -20,7 +21,7 @@ const swaggerDefinition = {
 // Options for the swagger docs
 const options = {
   swaggerDefinition,
-  apis: ["./src/routers/*.js"], // Path to the API docs
+  apis: ["./src/routers/post.js", "./src/routers/user.js"],
 };
 
 // Initialize swagger-jsdoc
