@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon cross-env NODE_ENV=dev node index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon index.js",
     "qc": "cross-env NODE_ENV=qc node index.js",
     "prod": "cross-env NODE_ENV=prod node index.js"
   },
