@@ -33,13 +33,27 @@ router.get("/", UserController.getAllUsers);
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               userName:
  *                 type: string
  *               email:
  *                 type: string
+ *               password:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               avatar:
+ *                 type: string
+ *               fullName:
+ *                 type: string
+ *               phone:
+ *                 type: string
+ *               dateOfBirth:
+ *                 type: string
  *     responses:
- *       200:
+ *       201:
  *         description: User created successfully
+ *       400:
+ *         description: Invalid input or user already exists
  */
 router.post("/create-user", UserController.createUser);
 
@@ -63,6 +77,8 @@ router.post("/create-user", UserController.createUser);
  *           application/json:
  *             schema:
  *               type: object
+ *       404:
+ *         description: User not found
  */
 router.get("/find-user/:id", UserController.readUser);
 
@@ -81,13 +97,27 @@ router.get("/find-user/:id", UserController.readUser);
  *             properties:
  *               id:
  *                 type: string
- *               name:
+ *               userName:
  *                 type: string
  *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               avatar:
+ *                 type: string
+ *               fullName:
+ *                 type: string
+ *               phone:
+ *                 type: string
+ *               dateOfBirth:
  *                 type: string
  *     responses:
  *       200:
  *         description: User updated successfully
+ *       400:
+ *         description: Invalid input or user not found
  */
 router.post("/update-user", UserController.updateUser);
 
@@ -107,6 +137,8 @@ router.post("/update-user", UserController.updateUser);
  *     responses:
  *       200:
  *         description: User deleted successfully
+ *       404:
+ *         description: User not found
  */
 router.delete("/delete-user/:id", UserController.deleteUser);
 

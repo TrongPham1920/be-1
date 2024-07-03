@@ -12,7 +12,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:8080",
+      url: "https://be-1-nd4y.onrender.com",
       description: "Development server",
     },
   ],

@@ -35,11 +35,21 @@ router.get("/", PostController.getAllPosts);
  *             properties:
  *               title:
  *                 type: string
+ *                 description: Title of the post
+ *                 example: "Sample Post Title"
  *               content:
  *                 type: string
+ *                 description: Content of the post
+ *                 example: "This is the content of the post."
+ *               userId:
+ *                 type: string
+ *                 description: ID of the user who created the post
+ *                 example: "60c72b2f9b1e8a001c8e4cdd"
  *     responses:
- *       200:
+ *       201:
  *         description: Post created successfully
+ *       400:
+ *         description: Invalid input
  */
 router.post("/create-post", PostController.createPost);
 
@@ -54,8 +64,9 @@ router.post("/create-post", PostController.createPost);
  *         name: id
  *         schema:
  *           type: string
+ *           description: The post ID
+ *           example: "60c72b2f9b1e8a001c8e4cdd"
  *         required: true
- *         description: The post ID
  *     responses:
  *       200:
  *         description: A post object
@@ -63,6 +74,16 @@ router.post("/create-post", PostController.createPost);
  *           application/json:
  *             schema:
  *               type: object
+ *               properties:
+ *                 title:
+ *                   type: string
+ *                 content:
+ *                   type: string
+ *                 userId:
+ *                   type: string
+ *                   description: ID of the user who created the post
+ *       404:
+ *         description: Post not found
  */
 router.get("/find-post/:id", PostController.readPost);
 
@@ -81,13 +102,21 @@ router.get("/find-post/:id", PostController.readPost);
  *             properties:
  *               id:
  *                 type: string
+ *                 description: ID of the post to update
+ *                 example: "60c72b2f9b1e8a001c8e4cdd"
  *               title:
  *                 type: string
+ *                 description: New title of the post
+ *                 example: "Updated Post Title"
  *               content:
  *                 type: string
+ *                 description: New content of the post
+ *                 example: "Updated content of the post."
  *     responses:
  *       200:
  *         description: Post updated successfully
+ *       400:
+ *         description: Invalid input or post not found
  */
 router.post("/update-post", PostController.updatePost);
 
@@ -102,11 +131,14 @@ router.post("/update-post", PostController.updatePost);
  *         name: id
  *         schema:
  *           type: string
+ *           description: The post ID
+ *           example: "60c72b2f9b1e8a001c8e4cdd"
  *         required: true
- *         description: The post ID
  *     responses:
  *       200:
  *         description: Post deleted successfully
+ *       404:
+ *         description: Post not found
  */
 router.delete("/delete-post/:id", PostController.deletePost);
 
