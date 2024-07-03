@@ -4,6 +4,24 @@ const PostController = require("../controllers/PostController");
 
 /**
  * @swagger
+ * /posts:
+ *   get:
+ *     summary: Get all posts
+ *     tags: [Posts]
+ *     responses:
+ *       200:
+ *         description: A list of posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ */
+router.get("/", PostController.getAllPosts);
+
+/**
+ * @swagger
  * /posts/create-post:
  *   post:
  *     summary: Create a new post

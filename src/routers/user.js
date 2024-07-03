@@ -4,6 +4,24 @@ const UserController = require("../controllers/UserController");
 
 /**
  * @swagger
+ * /users:
+ *   get:
+ *     summary: Get all users
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: A list of users
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ */
+router.get("/", UserController.getAllUsers);
+
+/**
+ * @swagger
  * /users/create-user:
  *   post:
  *     summary: Create a new user

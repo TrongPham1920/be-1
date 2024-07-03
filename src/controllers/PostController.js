@@ -138,3 +138,21 @@ exports.deletePost = async (req, res) => {
     res.status(400).send({ code: 1, mess: error?.message });
   }
 };
+
+exports.getAllPosts = async (req, res) => {
+  try {
+    const posts = await Post.find().populate({
+      path: "userId",
+      select:
+        "-password -status -createdAt -updatedAt -posts -__v -avatar -_id",
+    });
+
+    res.send({
+      code: 0,
+      data: posts,
+      mess: "Lấy danh sách bài viết thành công",
+    });
+  } catch (error) {
+    res.status(400).send({ code: 1, mess: error?.message });
+  }
+};

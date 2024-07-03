@@ -3,6 +3,20 @@ const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const dayjs = require("dayjs");
 
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+
+    res.send({
+      code: 0,
+      data: users,
+      mess: "Lấy danh sách người dùng thành công",
+    });
+  } catch (error) {
+    res.status(400).send({ code: 1, mess: error?.message });
+  }
+};
+
 // Create a new User
 exports.createUser = async (req, res) => {
   try {
