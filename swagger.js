@@ -21,7 +21,7 @@ const swaggerDefinition = {
 // Options for the swagger docs
 const options = {
   swaggerDefinition,
-  apis: ["./src/routers/post.js", "./src/routers/user.js"],
+  apis: ["./src/routers/*.js"],
 };
 
 // Initialize swagger-jsdoc
