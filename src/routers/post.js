@@ -4,7 +4,7 @@ const PostController = require("../controllers/PostController");
 
 /**
  * @swagger
- * /posts:
+ * /post:
  *   get:
  *     summary: Get all posts
  *     tags: [Posts]
@@ -22,7 +22,7 @@ router.get("/", PostController.getAllPosts);
 
 /**
  * @swagger
- * /posts/create-post:
+ * /post/create-post:
  *   post:
  *     summary: Create a new post
  *     tags: [Posts]
@@ -55,7 +55,7 @@ router.post("/create-post", PostController.createPost);
 
 /**
  * @swagger
- * /posts/find-post/{id}:
+ * /post/find-post/{id}:
  *   get:
  *     summary: Get a post by ID
  *     tags: [Posts]
@@ -89,7 +89,7 @@ router.get("/find-post/:id", PostController.readPost);
 
 /**
  * @swagger
- * /posts/update-post:
+ * /post/update-post:
  *   post:
  *     summary: Update a post
  *     tags: [Posts]
@@ -122,7 +122,7 @@ router.post("/update-post", PostController.updatePost);
 
 /**
  * @swagger
- * /posts/delete-post/{id}:
+ * /post/delete-post/{id}:
  *   delete:
  *     summary: Delete a post
  *     tags: [Posts]

@@ -1,6 +1,5 @@
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const Post = require("./src/routers/post");
 
 // Swagger definition
 const swaggerDefinition = {
@@ -13,6 +12,10 @@ const swaggerDefinition = {
   servers: [
     {
       url: "https://be-1-nd4y.onrender.com",
+      description: "Development server",
+    },
+    {
+      url: "http://localhost:8080",
       description: "Development server",
     },
   ],

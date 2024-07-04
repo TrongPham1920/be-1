@@ -27,7 +27,7 @@ exports.createPost = async (req, res) => {
     } else {
       res.status(300).send("Không tìm thấy id user");
     }
-    res.status(201).send(newPost);
+
     res.send({
       code: 0,
       data: newPost,

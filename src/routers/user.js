@@ -4,7 +4,7 @@ const UserController = require("../controllers/UserController");
 
 /**
  * @swagger
- * /users:
+ * /user:
  *   get:
  *     summary: Get all users
  *     tags: [Users]
@@ -22,7 +22,7 @@ router.get("/", UserController.getAllUsers);
 
 /**
  * @swagger
- * /users/create-user:
+ * /user/create-user:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
@@ -59,7 +59,7 @@ router.post("/create-user", UserController.createUser);
 
 /**
  * @swagger
- * /users/find-user/{id}:
+ * /user/find-user/{id}:
  *   get:
  *     summary: Get a user by ID
  *     tags: [Users]
@@ -84,7 +84,7 @@ router.get("/find-user/:id", UserController.readUser);
 
 /**
  * @swagger
- * /users/update-user:
+ * /user/update-user:
  *   post:
  *     summary: Update a user
  *     tags: [Users]
@@ -123,7 +123,7 @@ router.post("/update-user", UserController.updateUser);
 
 /**
  * @swagger
- * /users/delete-user/{id}:
+ * /user/delete-user/{id}:
  *   delete:
  *     summary: Delete a user
  *     tags: [Users]
